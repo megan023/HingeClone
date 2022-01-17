@@ -1,4 +1,4 @@
-import AppLoading from 'expo-app-loading';
+import { AppLoading } from 'expo-app-loading';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
