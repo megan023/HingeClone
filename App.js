@@ -1,14 +1,17 @@
-import { AppLoading } from 'expo-app-loading';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import AppLoading from 'expo-app-loading';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
+import { Themes } from './assets/Themes';
 
 export default function App() {
   let [fontsLoaded] = useFonts({
     Sydney: require('./assets/Fonts/Sydney-Serial-Regular.ttf'),
+    'Sydney-Bold': require('./assets/Fonts/Sydney-Serial-Bold.ttf'),
   });
   if (!fontsLoaded) return <AppLoading />;
   /* ^Don't mind/edit the code above, it's there to load the font for you! */
+  StatusBar.setBarStyle(Themes.light.statusBar);
+  /* ^Don't mind/edit this one either unless you decide to do the dark theme one, in that case, you will have to change it accordingly*/
 
   /* insert your code here */
 
@@ -20,7 +23,12 @@ export default function App() {
         }}>
         Open up App.js to start working on your app!
       </Text>
-      <StatusBar style="auto" />
+      <Text
+        style={{
+          fontFamily: 'Sydney-Bold', // test to see if the font is loaded, feel free to remove this
+        }}>
+        ~Good luck~
+      </Text>
     </View>
   );
 }
